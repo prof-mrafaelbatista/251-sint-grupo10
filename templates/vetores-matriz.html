@@ -1,0 +1,82 @@
+<div class="bg-white p-8 rounded-lg shadow-md">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-4 border-gray-200">Vetores e matrizes</h2>
+    <p class="text-gray-700 text-base leading-relaxed mb-6">
+    Vetores (listas) e matrizes (listas de listas) são usados para armazenar coleções de dados. Em Python, os vetores são representados por listas e as matrizes por listas de listas.
+    </p>
+    <!-- Vetores -->
+    <h3 class="text-2xl font-bold text-gray-800 mb-3 pb-2">Vetores:</h3>
+    <p class="text-gray-700 text-base leading-relaxed mb-6">
+    Vetores são estruturas de dados que permitem armazenar uma coleção de elementos, como números, strings ou objetos. Eles são úteis para organizar e manipular dados de forma eficiente.
+    Em Python, os vetores são representados por listas, que são coleções ordenadas e mutáveis. Você pode criar um vetor usando colchetes <code class="bg-gray-200 text-gray-800 px-1 rounded">[]</code> e separar os elementos por vírgulas.
+    </p>
+    <p class="text-gray-700 text-base leading-relaxed mb-6">Exemplo de vetor:</p>
+    <div class="code-block mb-4">
+    numeros = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]
+    <span class="comment">Vetor dos números inteiros de 1 a 3.</span>
+    </div>
+    <p class="text-gray-700 text-base leading-relaxed mb-6">
+        Neste exemplo, o vetor <code class="bg-gray-200 text-gray-800 px-1 rounded">numeros</code> contém três elementos: 1, 2 e 3. Você pode acessar os elementos do vetor usando índices, começando do zero. Por exemplo, <code class="bg-gray-200 text-gray-800 px-1 rounded">numeros[0]</code> retorna o primeiro elemento (1), <code class="bg-gray-200 text-gray-800 px-1 rounded">numeros[1]</code> retorna o segundo elemento (2) e assim por diante. Veja abaixo a sintaxe de acesso aos elementos do vetor:
+    </p>
+    <!-- Exemplo acessando índice -->
+    <div class="code-block mb-4">
+    print(numeros[0])  <span class="comment"># Imprime 1</span><br/>
+    print(numeros[1])  <span class="comment"># Imprime 2</span><br/>
+    print(numeros[2])  <span class="comment"># Imprime 3</span>
+    </div>
+    <p class="text-gray-700 text-base leading-relaxed mb-6">
+        Os vetores são úteis para armazenar sequências de dados, como listas de números, nomes ou qualquer outro tipo de informação que você queira agrupar. Você pode adicionar, remover ou modificar elementos do vetor usando métodos como <code class="bg-gray-200 text-gray-800 px-1 rounded">append()</code>, <code class="bg-gray-200 text-gray-800 px-1 rounded">remove()</code> e <code class="bg-gray-200 text-gray-800 px-1 rounded">pop()</code>.
+    </p>
+    <!-- Exemplo manipulando elementos -->
+    <div class="code-block mb-4">
+        numeros.append(<span class="number">4</span>)  <span class="comment"># Adiciona o número 4 ao vetor</span><br/>
+        numeros.remove(<span class="number">2</span>)  <span class="comment"># Remove o número 2 do vetor</span><br/>
+        numeros.pop()  <span class="comment"># Remove e retorna o último elemento (3)</span>
+    </div>
+    <p class="text-gray-700 text-base leading-relaxed mb-6">
+        Além disso, você pode iterar sobre os elementos do vetor usando estruturas de repetição, como <code class="bg-gray-200 text-gray-800 px-1 rounded">for</code> e <code class="bg-gray-200 text-gray-800 px-1 rounded">while</code>, para realizar operações em cada elemento.
+    </p>
+    <div class="code-block mb-4">
+        <span class="keyword">for</span> numero <span class="keyword">in</span> numeros:<br/>
+        <span class="space"> </span> print(numero)  <span class="comment"># Imprime cada número do vetor</span>
+    </div>
+    <br>
+    
+    <!-- Matriz -->
+    <h3 class="text-2xl font-bold text-gray-800 mb-3 pb-2">Matrizes:</h3>
+    <p class="text-gray-700 text-base leading-relaxed mb-6">
+        Matrizes são estruturas de dados que permitem armazenar coleções de elementos em duas dimensões, como tabelas ou grades. Elas são úteis para representar dados organizados em linhas e colunas.
+        Em Python, as matrizes são representadas por listas de listas, onde cada lista interna representa uma linha da matriz. Você pode criar uma matriz usando colchetes aninhados <code class="bg-gray-200 text-gray-800 px-1 rounded">[[]]</code> e separar os elementos por vírgulas. 
+    </p>
+    <p class="text-gray-700 text-base leading-relaxed mb-6">Exemplo de matriz:</p>
+    <div class="code-block mb-4">
+        matriz = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],
+                  [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>],
+                  [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]]
+        <span class="comment"># Matriz 3x3 com números de 1 a 9.</span>
+    </div>
+    <p class="text-gray-700 text-base leading-relaxed mb-6">
+      As matrizes são úteis para representar tabelas, gráficos ou qualquer estrutura bidimensional. Você pode acessar os elementos de uma matriz usando dois índices: o primeiro para a linha e o segundo para a coluna. Por exemplo, <code class="bg-gray-200 text-gray-800 px-1 rounded">matriz[0][1]</code> retorna o elemento da primeira linha e segunda coluna.
+    </p>
+    <div class="code-block mb-4">
+        print(matriz[0][0])  <span class="comment"># Imprime 1 (primeira linha, primeira coluna)</span><br/>
+        print(matriz[1][2])  <span class="comment"># Imprime 6 (segunda linha, terceira coluna)</span><br/>
+        print(matriz[2][1])  <span class="comment"># Imprime 8 (terceira linha, segunda coluna)</span>
+    </div>
+    <p class="text-gray-700 text-base leading-relaxed mb-6">
+      As matrizes também podem ser manipuladas usando métodos como <code class="bg-gray-200 text-gray-800 px-1 rounded">append()</code> e <code class="bg-gray-200 text-gray-800 px-1 rounded">remove()</code>, mas lembre-se de que você estará lidando com listas de listas.
+    </p>
+    <div class="code-block mb-4">
+        matriz[0].append(<span class="number">10</span>)  <span class="comment"># Adiciona o número 10 à primeira linha da matriz</span><br/>
+        matriz[1].remove(<span class="number">5</span>)  <span class="comment"># Remove o número 5 da segunda linha da matriz</span>
+    </div>
+    <!-- Ambos -->
+    <p class="text-gray-700 text-base leading-relaxed mb-6">
+      Em resumo, vetores e matrizes são estruturas de dados fundamentais em Python que permitem armazenar e manipular coleções de dados de forma eficiente. Eles são amplamente utilizados em programação para resolver uma variedade de problemas, desde simples listas até estruturas mais complexas.
+    </p>
+    <div class="mt-10">
+    <h3 class="text-xl font-bold text-gray-800 mb-4">Para saber mais, assista esse verdadeiro ensino de uma das maiores referências, quiçá a maior, em programação:</h3>
+    <div class="w-full max-w-2xl">
+    <iframe class="w-full h-80 rounded-lg shadow-lg" src="https://www.youtube.com/embed/KI-MYLespHg" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>

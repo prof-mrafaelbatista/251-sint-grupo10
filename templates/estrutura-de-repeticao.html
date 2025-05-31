@@ -1,0 +1,55 @@
+<div class="bg-white p-8 rounded-lg shadow-md">
+  <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-4 border-gray-200">Estruturas de repetição</h2>
+  <p class="text-gray-700 text-base leading-relaxed mb-6">
+    Estruturas de repetição permitem executar um bloco de código várias vezes, desde que a sua condição seja verdadeira. Em Python, as principais são <code class="bg-gray-200 text-gray-800 px-1 rounded">for</code> e <code class="bg-gray-200 text-gray-800 px-1 rounded">while</code>.
+  </p>
+  <!-- For -->
+  <section class="mb-8">
+    <h3 class="text-2xl font-semibold text-gray-700 mb-3">Estrutura 'for'</h3>
+    <div class="code-block mb-4">
+      <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):<br/>
+      <span class="space"> </span> print(i) <span class="comment">  # Imprime números de 0 a 4</span>
+    </div>
+    <p class="text-gray-700 text-base leading-relaxed mb-4">
+      Neste exemplo, a estrutura de repetição <code class="bg-gray-200 text-gray-800 px-1 rounded">for</code> itera sobre os números de 0 a 4, imprimindo cada número. A função <code class="bg-gray-200 text-gray-800 px-1 rounded">range(5)</code> refere-se ao intervalo de números de 0 a 4. A variável <code class="bg-gray-200 text-gray-800 px-1 rounded">i</code> assume cada valor do intervalo em cada iteração.
+    </p>
+    <p class="text-gray-700 text-base leading-relaxed mb-4">
+        A estrutura <code class="bg-gray-200 text-gray-800 px-1 rounded">for</code> é útil quando você sabe quantas vezes deseja repetir um bloco de código, como iterar sobre uma lista ou um intervalo de números.
+    </p>
+
+  </section>
+  
+  <!-- While -->
+  <section class="mb-8">
+    <h3 class="text-2xl font-semibold text-gray-700 mb-3">Estrutura 'while'</h3>
+    <div class="code-block mb-4">
+        contador = <span class="number">0</span><br/>
+        <span class="keyword">while</span> contador &lt; <span class="number">5</span>:<br/>
+        <span class="space"> </span> print(contador)<br/>
+        <span class="space"> </span> contador += <span class="number">1</span> <span class="comment">  # Incrementa o contador</span>
+    </div>
+    <p class="text-gray-700 text-base leading-relaxed mb-4">
+      Neste exemplo, a estrutura de repetição <code class="bg-gray-200 text-gray-800 px-1 rounded">while</code> continua executando o bloco de código enquanto a condição <code class="bg-gray-200 text-gray-800 px-1 rounded">contador &lt; 5</code> for verdadeira. A variável <code class="bg-gray-200 text-gray-800 px-1 rounded">contador</code> é incrementada em 1 a cada iteração, garantindo que eventualmente a condição se torne falsa e o loop seja encerrado.
+    </p>
+    <p class="text-gray-700 text-base leading-relaxed mb-4">
+      A estrutura <code class="bg-gray-200 text-gray-800 px-1 rounded">while</code> é útil quando você não sabe quantas vezes precisará repetir um bloco de código, como em loops que dependem de condições dinâmicas.
+    </p>
+  </section>
+
+  <!-- Diferença entre 'for' e 'while' -->
+  <section>
+    <h3 class="text-2xl font-semibold text-gray-700 mb-3">Diferença entre 'for' e 'while'</h3>
+    <p class="text-gray-700 text-base leading-relaxed mb-4">
+      A principal diferença entre as estruturas de repetição <code class="bg-gray-200 text-gray-800 px-1 rounded">for</code> e <code class="bg-gray-200 text-gray-800 px-1 rounded">while</code> é que o <code class="bg-gray-200 text-gray-800 px-1 rounded">for</code> é usado quando você sabe quantas vezes deseja repetir um bloco de código, enquanto o <code class="bg-gray-200 text-gray-800 px-1 rounded">while</code> é usado quando a repetição depende de uma condição que pode mudar durante a execução do programa.
+    </p>
+    <p class="text-gray-700 text-base leading-relaxed mb-4">
+      Em resumo, use <code class="bg-gray-200 text-gray-800 px-1 rounded">for</code> para iterar sobre sequências ou intervalos conhecidos e <code class="bg-gray-200 text-gray-800 px-1 rounded">while</code> para loops que dependem de condições dinâmicas.
+    </p>
+  </section>
+  <div class="mt-10">
+    <h3 class="text-xl font-bold text-gray-800 mb-4">Para saber mais, assista essa aula dele, ninguém mais, niguém menos que o Mestre Jedi da programação:</h3>
+    <div class="w-full max-w-2xl">
+      <iframe class="w-full h-80 rounded-lg shadow-lg" src="https://www.youtube.com/embed/TfN9IDfv9y8" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>

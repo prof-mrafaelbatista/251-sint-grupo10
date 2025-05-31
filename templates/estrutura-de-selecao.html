@@ -1,0 +1,71 @@
+<div class="bg-white p-8 rounded-lg shadow-md m-0">
+  <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-4 border-gray-200">Estruturas de seleção</h2>
+  <p class="text-gray-700 text-base leading-relaxed mb-6">
+    Em Python, as estruturas de seleção permitem que o programa execute diferentes blocos de código com base em condições, representadas por expressões lógicas ou
+    relacionais. As principais estruturas de seleção são:
+    <code class="bg-gray-200 text-gray-800 px-1 rounded">if</code>,
+    <code class="bg-gray-200 text-gray-800 px-1 rounded">elif</code> e
+    <code class="bg-gray-200 text-gray-800 px-1 rounded">else</code>.
+  </p>
+  <!-- IF -->
+  <section class="mb-8">
+    <h3 class="text-2xl font-semibold text-gray-700 mb-3">Estrutura 'if'</h3>
+    <p class="text-gray-700 text-base leading-relaxed mb-4">
+      A estrutura <code class="bg-gray-200 text-gray-800 px-1 rounded">if</code> é usada para executar um bloco de código se uma condição for verdadeira. A sintaxe é a seguinte:
+    </p>
+    <div class="code-block mb-4">
+      idade = <span class="number">20</span><br/>
+      <span class="keyword">if</span> idade &gt;= <span class="number">18</span>:<br/>
+      <span class="space"> </span> print(<span class="string">"Você é maior de idade."</span>)
+    </div>
+    <p class="text-gray-700 text-base leading-relaxed mb-4">
+      Neste exemplo, o programa verifica se a variável <code class="bg-gray-200 text-gray-800 px-1 rounded">idade</code> é maior ou igual (>=) a 18. Se o resultado da expressão lógica for verdadeiro, ele imprime uma mensagem indicando que a pessoa é maior de idade.
+    </p>
+  </section>
+    <!-- ELIF -->
+  <section class="mb-8">
+    <h3 class="text-2xl font-semibold text-gray-700 mb-3">Estrutura 'elif'</h3>
+    <p class="text-gray-700 text-base leading-relaxed mb-4">
+      A estrutura <code class="bg-gray-200 text-gray-800 px-1 rounded">elif</code> (abreviação de 'else if') é usada para verificar múltiplas condições. Se a condição do
+      <code class="bg-gray-200 text-gray-800 px-1 rounded">if</code> for falsa, o programa verifica a condição do
+      <code class="bg-gray-200 text-gray-800 px-1 rounded">elif</code>. A sintaxe é a seguinte:
+    </p>
+    <div class="code-block mb-4">
+        idade = <span class="number">16</span><br/>
+        <span class="keyword">if</span> idade &gt;= <span class="number">18</span>:<br/>
+        <span class="space"> </span> print(<span class="string">"Você é maior de idade."</span>)<br/>
+        <span class="keyword">elif</span> idade &gt;= <span class="number">13</span>:<br/>
+        <span class="space"> </span> print(<span class="string">"Você é adolescente."</span>)
+    </div>
+    <p class="text-gray-700 text-base leading-relaxed mb-4">
+      Neste exemplo, o programa verifica se a variável <code class="bg-gray-200 text-gray-800 px-1 rounded">idade</code> é maior ou igual a 18. Como o resultado é falso (idade = 16), ele pula para o bloco do <code class="bg-gray-200 text-gray-800 px-1 rounded">elif</code> e verifica se a idade é maior ou igual a 13. Se essa condição for verdadeira, ele imprime uma mensagem indicando que a pessoa é adolescente.
+    </p>
+  </section>
+    <!-- ELSE -->
+  <section class="mb-8">
+    <h3 class="text-2xl font-semibold text-gray-700 mb-3">Estrutura 'else'</h3>
+    <p class="text-gray-700 text-base leading-relaxed mb-4">
+      A estrutura <code class="bg-gray-200 text-gray-800 px-1 rounded">else</code> é usada para executar um bloco de código se nenhuma das condições anteriores (<code class="bg-gray-200 text-gray-800 px-1 rounded">if</code> ou <code class="bg-gray-200 text-gray-800 px-1 rounded">elif</code>) for verdadeira. A sintaxe é a seguinte:
+    </p>
+    <div class="code-block mb-4">
+        idade = <span class="number">10</span><br/>
+        <span class="keyword">if</span> idade &gt;= <span class="number">18</span>:<br/>
+        <span class="space"> </span> print(<span class="string">"Você é maior de idade."</span>)<br/>
+        <span class="keyword">elif</span> idade &gt;= <span class="number">13</span>:<br/>
+        <span class="space"> </span> print(<span class="string">"Você é adolescente."</span>)<br/>
+        <span class="keyword">else</span>:<br/>
+        <span class="space"> </span> print(<span class="string">"Você é criança."</span>)
+    </div>
+    <p class="text-gray-700 text-base leading-relaxed mb-4">
+      Neste exemplo, o programa verifica se a variável <code class="bg-gray-200 text-gray-800 px-1 rounded">idade</code> é maior ou igual a 18. Como o resultado é falso (idade = 10), ele pula para o bloco do <code class="bg-gray-200 text-gray-800 px-1 rounded">elif</code> e verifica se a idade é maior ou igual a 13. Como essa condição também é falsa, ele executa o bloco do <code class="bg-gray-200 text-gray-800 px-1 rounded">else</code>, imprimindo uma mensagem indicando que a pessoa é criança.
+    </p>
+  </section>
+
+  <!-- Vídeo Youtube Professor -->
+  <div class="mt-10">
+    <h3 class="text-xl font-bold text-gray-800 mb-4">Para saber mais, assista essa aula do melhor professor, o Messi da programação:</h3>
+    <div class="w-full max-w-2xl">
+      <iframe class="w-full h-80 rounded-lg shadow-lg" src="https://www.youtube.com/embed/sYzQgPn9Wp8" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>

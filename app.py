@@ -78,4 +78,25 @@ def chatbot_page():
     return render_template('chatbot.html', resposta=resposta)
 
 
+@app.route('/estrutura-de-selecao.html')
+def estrutura_de_selecao():
+    return render_template('estrutura-de-selecao.html')
+
+@app.route('/estrutura-de-repeticao.html')
+def estrutura_de_repeticao():
+    return render_template('estrutura-de-repeticao.html')
+
+@app.route('/vetores-matriz.html')
+def vetores_matriz():
+    return render_template('vetores-matriz.html')
+
+@app.route('/funcoes.html')
+def funcoes():
+    return render_template('funcoes.html')
+
+@app.route('/excecoes.html')
+def excecoes():
+    return render_template('excecoes.html')
+
+
 app.run(debug=True, port=5001)

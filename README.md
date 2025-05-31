@@ -1,6 +1,6 @@
 # Projeto Final - Fundamentos de Programação em Python
-# Aluno: Victor Alexandre Medeiros Araújo Aires
-# Turma: SPI P1 - Noite
+**Aluno: Victor Alexandre Medeiros Araújo Aires**
+**Turma: SPI P1 - Noite**
 
 ## Objetivo Geral
 Desenvolver uma aplicação web interativa utilizando o framework Flask para criar um site informativo sobre os fundamentos da programação em Python. O projeto inclui uma funcionalidade de perguntas e respostas integrada com a API do Gemini e um dicionário interativo de termos de programação com persistência em arquivo de texto.
