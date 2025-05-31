@@ -1,0 +1,27 @@
+{% extends "modelo.html" %}
+{% block conteudo %}
+<div class="flex justify-center items-center min-h-[70vh] bg-[#f7f8fa]">
+  <div class="w-full max-w-xl bg-white rounded-2xl shadow-2xl p-8 flex flex-col items-center">
+    <h2 class="text-2xl font-bold text-[#121416] mb-6 tracking-tight">IA Reborn <span class="text-[#243a69]">Chat</span></h2>
+    <form method="post" action="/chatbot" class="w-full flex flex-col gap-7" onsubmit="mostrarLoading()">
+      <textarea id="pergunta" name="pergunta" class="w-full border border-[#e3e6ea] rounded-xl px-4 py-3 text-base focus:ring-2 focus:ring-[#0A66C2] focus:outline-none transition min-h-[150px] resize-none bg-[#f7f8fa]" placeholder="Digite sua pergunta para a IA Reborn..." required></textarea>
+      <button type="submit" class="w-full bg-[#243a69] hover:bg-[#0A66C2] text-white font-normal py-2.5 rounded-xl text-lg shadow transition">Enviar</button>
+    </form>
+    <div id="loading" style="display:none;" class="flex flex-col items-center mt-4">
+      <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-[#0A66C2] mb-2"></div>
+      <span class="text-[#0A66C2] text-base">Carregando resposta...</span>
+    </div>
+    {% if resposta %}
+    <div class="w-full bg-[#f1f6fa] border border-[#e3e6ea] rounded-xl mt-6 p-4 text-[#222] text-base shadow-sm animate-fade-in">
+      <div class="font-semibold text-[#0A66C2] mb-1">Gemini:</div>
+      <div style="white-space: pre-line;">{{ resposta }}</div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+<script>
+function mostrarLoading() {
+    document.getElementById('loading').style.display = 'flex';
+}
+</script>
+{% endblock %}

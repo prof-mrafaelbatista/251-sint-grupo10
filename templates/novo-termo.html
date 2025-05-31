@@ -1,0 +1,28 @@
+{% extends "modelo.html" %}
+{% block conteudo %}
+<div class="flex justify-center">
+    <div class="max-w-4xl mt-14 mb-16 bg-white rounded-xl shadow-lg p-8 w-full">
+        <h1 class="text-2xl md:text-3xl font-bold text-[#121416] mb-8 text-center">Adicionar Novo Termo</h1>
+        <form action="{{ url_for('criarTermo')}}" method="post" class="space-y-6">
+            <div>
+                <label for="termo" class="block text-sm font-medium text-[#3d98f4] mb-1">Termo</label>
+                <input class="block w-full rounded-lg border border-gray-300 px-4 py-2 text-gray-800 focus:ring-2 focus:ring-[#3d98f4] focus:border-[#3d98f4] transition outline-none" id="termo" name="termo" placeholder="Digite aqui o termo a ser adicionado" required>
+            </div>
+            <div>
+                <label for="definicao" class="block text-sm font-medium text-[#3d98f4] mb-1">Definição</label>
+                <textarea class="block w-full rounded-lg border border-gray-300 px-4 py-2 text-gray-800 focus:ring-2 focus:ring-[#3d98f4] focus:border-[#3d98f4] transition outline-none" id="definicao" name="definicao" rows="4" placeholder="Digite aqui a definição do termo acima" required></textarea>
+            </div>
+            <div class="flex justify-between items-center">
+                <a href="/glossario" class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-gray-100 text-[#3d98f4] font-semibold text-base shadow hover:bg-gray-200 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                    Voltar ao Glossário
+                </a>
+                <button type="submit" class="inline-flex items-center gap-2 px-6 py-2 rounded-lg bg-[#3d98f4] text-white font-semibold text-base shadow hover:bg-[#2176c7] transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+                    Adicionar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
