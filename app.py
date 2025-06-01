@@ -51,6 +51,43 @@ def apagar_termo():
     return redirect(url_for('glossario'))
 
 
+@app.route('/editar-termo/<termo>', methods=['GET', 'POST'])
+def editar_termo(termo):
+    definicao_atual = ''
+
+    # Busca o termo e sua definição
+    with open('bd_glossario.csv', 'r', newline='', encoding='utf-8') as arquivo:
+        reader = csv.reader(arquivo, delimiter=';')
+        for linha in reader:
+            if linha[0] == termo:
+                definicao_atual = linha[1]
+                break
+
+    # Método POST
+    if request.method == 'POST':
+        nova_definicao = request.form.get('definicao')
+        linhas_atualizadas = []
+
+        # Atualiza a definição do termo
+        with open('bd_glossario.csv', 'r', newline='', encoding='utf-8') as arquivo:
+            reader = csv.reader(arquivo, delimiter=';')
+            for linha in reader:
+                if linha[0] == termo:
+                    linhas_atualizadas.append([termo, nova_definicao])
+                else:
+                    linhas_atualizadas.append(linha)
+
+        # Altera o bd com a definição atualizada
+        with open('bd_glossario.csv', 'w', newline='', encoding='utf-8') as arquivo:
+            writer = csv.writer(arquivo, delimiter=';')
+            writer.writerows(linhas_atualizadas)
+        flash(f'Definição do termo "{termo}" atualizada com sucesso!', 'success')
+        
+        return redirect(url_for('glossario'))
+    
+    return render_template('editar-termo.html', termo=termo, definicao=definicao_atual)
+
+
 @app.route('/novo-termo')
 def novoTermo():
     return render_template('novo-termo.html')
