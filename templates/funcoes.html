@@ -1,10 +1,102 @@
 <div class="bg-white p-8 rounded-lg shadow-md">
-  <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-4 border-gray-200">Funções e procedimentos</h2>
+  <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-4 border-gray-200">Funções e Procedimentos</h2>
   <p class="text-gray-700 text-base leading-relaxed mb-6">
-    Funções permitem reutilizar código. Exemplo:
+    Funções e procedimentos são blocos de código reutilizáveis que realizam tarefas específicas. Em Python, você pode definir funções usando a palavra-chave <code class="bg-gray-200 text-gray-800 px-1 rounded">def</code>. As funções podem receber parâmetros e retornar valores.
+  </p>
+  <!-- Funções -->
+  <h3 class="text-2xl font-bold text-gray-800 mb-3 pb-2">Funções:</h3>
+  <p class="text-gray-700 text-base leading-relaxed mb-6">
+    Elas são úteis para organizar o código, evitar duplicação e facilitar a manutenção. Você pode chamar uma função em qualquer parte do seu programa, passando os argumentos necessários.
+  </p>
+  <p class="text-gray-700 text-base leading-relaxed mb-6">
+    As funções podem ser usadas para realizar cálculos, manipular dados, interagir com o usuário ou executar qualquer tarefa que você precise. Elas ajudam a tornar o código mais modular e legível.
+  </p>
+  <!-- Exemplo de definição de função -->
+  <p class="text-gray-700 text-base leading-relaxed mb-6">
+    Exemplo de função em Python:
   </p>
   <div class="code-block mb-4">
+    <span class="keyword">def</span> soma(a, b):<br/>
+    <span class="space"> </span> return a + b
+  </div>
+  <p class="text-gray-700 text-base leading-relaxed mb-6">
+    Neste exemplo, a função <code class="bg-gray-200 text-gray-800 px-1 rounded">soma</code> recebe dois parâmetros <code class="bg-gray-200 text-gray-800 px-1 rounded">a</code> e <code class="bg-gray-200 text-gray-800 px-1 rounded">b</code>, e retorna a soma desses valores.
+  </p>
+  <p class="text-gray-700 text-base leading-relaxed mb-6">
+    Você pode chamar essa função passando os valores desejados:
+  </p>
+  <div class="code-block mb-4">
+    resultado = soma(<span class="number">5</span>, <span class="number">3</span>)  <span class="comment"># "Chamando" a função soma</span>
+    print(resultado)  <span class="comment"># Imprime 8</span>
+  </div>
+  <p class="text-gray-700 text-base leading-relaxed mb-6">
+    Neste exemplo, a função <code class="bg-gray-200 text-gray-800 px-1 rounded">soma</code> é chamada com os valores 5 e 3, e o resultado (8) é impresso na tela.
+  </p>
+  <p class="text-gray-700 text-base leading-relaxed mb-6">
+    Além disso, você pode definir funções sem parâmetros, que executam uma tarefa específica sem receber valores de entrada. Por exemplo:
+  </p>
+  <p class="text-gray-700 text-base leading-relaxed mb-6">
+    Exemplo de função sem parâmetros:
+  </p> 
+  <div class="code-block mb-4">
     <span class="keyword">def</span> saudacao():<br/>
-    <span class="space"> </span> print(<span class="string">"Olá!"</span>)
+    <span class="space"> </span> print(<span class="string">"Olá, mundo!"</span>)
+  </div>
+  <p class="text-gray-700 text-base leading-relaxed mb-6">
+    Neste exemplo, a função <code class="bg-gray-200 text-gray-800 px-1 rounded">saudacao</code> não recebe parâmetros e simplesmente imprime uma mensagem de saudação.
+  </p>
+  <p class="text-gray-700 text-base leading-relaxed mb-6">
+    Você pode chamar essa função da seguinte forma:
+  </p>
+  <div class="code-block mb-4">
+    saudacao()  <span class="comment"># Imprime "Olá, mundo!"</span>
+  </div>
+  <p class="text-gray-700 text-base leading-relaxed mb-6">
+    As funções são uma parte fundamental da programação, pois permitem dividir o código em partes menores e mais gerenciáveis. Elas ajudam a tornar o código mais modular, reutilizável e fácil de entender.
+    Vantagens de usar funções incluem:
+    <ul class="text-gray-700 text-base leading-relaxed mb-6">
+      <li>- <b>Reutilização de Código</b>: Evita repetição.</li>
+      <li>- <b>Modularidade</b>: Torna o código mais gerenciável.</li>
+      <li>- <b>Abstração</b>: Pensamento em ações de alto nível.</li>
+      <li>- <b>Colaboração</b>: Permite trabalho simultâneo em diferentes partes.</li>
+    </ul>
+  </p>
+  <hr><br>
+
+  <!-- Procedimentos -->
+  <h3 class="text-2xl font-bold text-gray-800 mb-3 pb-2">Procedimentos:</h3>
+  <p class="text-gray-700 text-base leading-relaxed mb-6">
+    Procedimentos são semelhantes às funções, mas não retornam valores. Eles são usados para executar uma série de instruções sem produzir um resultado específico. Em Python, você pode definir procedimentos da mesma forma que define funções, mas sem a palavra-chave <code class="bg-gray-200 text-gray-800 px-1 rounded">return</code>.
+  </p>
+  <p class="text-gray-700 text-base leading-relaxed mb-6">
+    Eles são úteis para realizar ações, como exibir mensagens, modificar variáveis ou executar tarefas específicas sem a necessidade de retornar um valor.
+  </p>
+  <p class="text-gray-700 text-base leading-relaxed mb-6">
+    Exemplo de procedimento em Python:
+  </p>
+  <div class="code-block mb-4">
+    <span class="keyword">def</span> exibir_mensagem(mensagem):<br/>
+    <span class="space"> </span> print(mensagem)
+  </div>
+  <p class="text-gray-700 text-base leading-relaxed mb-6">
+    Neste exemplo, o procedimento <code class="bg-gray-200 text-gray-800 px-1 rounded">exibir_mensagem</code> recebe um parâmetro <code class="bg-gray-200 text-gray-800 px-1 rounded">mensagem</code> e simplesmente imprime essa mensagem na tela.
+  </p>
+  <p class="text-gray-700 text-base leading-relaxed mb-6">
+    Você pode chamar esse procedimento passando a mensagem desejada:
+  </p>
+  <div class="code-block mb-4">
+    exibir_mensagem(<span class="string">"Olá, mundo!"</span>)  <span class="comment"># Imprime "Olá, mundo!"</span>
+  </div>
+  <p class="text-gray-700 text-base leading-relaxed mb-6">
+    Neste exemplo, o procedimento <code class="bg-gray-200 text-gray-800 px-1 rounded">exibir_mensagem</code> é chamado com a mensagem "Olá, mundo!", que é impressa na tela.
+  </p>
+  <p class="text-gray-700 text-base leading-relaxed mb-6">
+    Os procedimentos são úteis quando você precisa executar uma série de instruções sem a necessidade de retornar um valor específico. Eles ajudam a organizar o código e a torná-lo mais legível.
+  </p>
+  <div class="mt-10">
+    <h3 class="text-xl font-bold text-gray-800 mb-4">Para saber mais, assista a esta aula que deveria receber um Prêmio Nobel de Tecnológia:</h3>
+    <p class="text-gray-700 text-base leading-relaxed mb-6">Obs: Caso não exista, deveriam criar por causa dessa aula</p>
+    <div class="w-full max-w-2xl">
+      <iframe class="w-full h-80 rounded-lg shadow-lg" src="https://www.youtube.com/embed/AfmemD5-MaE" title="YouTube video" frameborder="0" allowfullscreen></iframe>
   </div>
 </div>

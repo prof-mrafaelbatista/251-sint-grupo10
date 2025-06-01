@@ -1,5 +1,5 @@
 import csv
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, url_for, request, redirect, jsonify, flash
 import google.generativeai as genai
 import os
 from dotenv import load_dotenv
@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
+app.secret_key = 'chave-secreta-para-flash'  # Necessário para usar flash messages
 
 
 @app.route('/')
@@ -32,14 +33,27 @@ def glossario():
     return render_template('glossario.html', glossario=glossarioDeTermos)
 
 
+@app.route('/apagar-termo', methods=['POST'])
+def apagar_termo():
+    termo_para_apagar = request.form.get('termo')
+    linhas_restantes = []
+
+    with open('bd_glossario.csv', 'r', newline='', encoding='utf-8') as arquivo:
+        reader = csv.reader(arquivo, delimiter=';')
+        for linha in reader:
+            if linha[0] != termo_para_apagar:
+                linhas_restantes.append(linha)
+    with open('bd_glossario.csv', 'w', newline='', encoding='utf-8') as arquivo:
+        writer = csv.writer(arquivo, delimiter=';')
+        writer.writerows(linhas_restantes)
+    flash(f'Termo "{termo_para_apagar}" apagado com sucesso!', 'success')
+
+    return redirect(url_for('glossario'))
+
+
 @app.route('/novo-termo')
 def novoTermo():
     return render_template('novo-termo.html')
-
-
-@app.route('/conteudo-python')
-def conteudoPython():
-    return render_template('conteudo-python.html')
 
 
 @app.route('/criarTermo', methods=['POST'])
@@ -53,6 +67,12 @@ def criarTermo():
         writer.writerow([termo, definicao])
 
     return redirect(url_for('glossario')) 
+
+
+@app.route('/conteudo-python')
+def conteudoPython():
+    return render_template('conteudo-python.html')
+
 
 # Configuração do Google Generative AI
 api_key = os.environ.get('GOOGLE_GENAI_API_KEY')
@@ -78,23 +98,27 @@ def chatbot_page():
     return render_template('chatbot.html', resposta=resposta)
 
 
-@app.route('/estrutura-de-selecao.html')
+@app.route('/estrutura-de-selecao')
 def estrutura_de_selecao():
     return render_template('estrutura-de-selecao.html')
 
-@app.route('/estrutura-de-repeticao.html')
+
+@app.route('/estrutura-de-repeticao')
 def estrutura_de_repeticao():
     return render_template('estrutura-de-repeticao.html')
 
-@app.route('/vetores-matriz.html')
+
+@app.route('/vetores-matriz')
 def vetores_matriz():
     return render_template('vetores-matriz.html')
 
-@app.route('/funcoes.html')
+
+@app.route('/funcoes')
 def funcoes():
     return render_template('funcoes.html')
 
-@app.route('/excecoes.html')
+
+@app.route('/excecoes')
 def excecoes():
     return render_template('excecoes.html')
 

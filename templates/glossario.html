@@ -1,10 +1,30 @@
 {% extends "modelo.html" %}
 {% block conteudo %}
-<div class="max-w-4xl mx-auto mt-12 mb-16 bg-white rounded-xl shadow-lg p-8">
-  <h1 class="text-3xl font-bold text-[#121416] mb-8 text-center">Glossário Python</h1>
+<div class="max-w-7xl mx-auto mt-12 mb-16 bg-white rounded-xl shadow-lg p-8">
+  <h1 class="inline-flex items-center text-3xl font-bold text-[#121416] mb-8 mr-8 text-center">Glossário Python</h1>
+  <a href="/novo-termo" class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-[#3d98f4] text-white font-semibold text-sm shadow hover:bg-[#243a69] transition-colors">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+    Novo Termo
+  </a>
+
+  <!-- Mensagem de sucesso/erro via flash -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="mt-6 mb-4">
+        {% for category, message in messages %}
+          <!-- Exibe mensagens de sucesso ou erro -->
+          <div class="px-4 py-3 rounded-md text-sm font-semibold mb-2 {{ 'bg-green-100 text-green-800 border border-green-300' if category == 'success' else 'bg-red-100 text-red-800 border border-red-300' }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <!-- Tabela do Glossário -->
   <div class="overflow-x-auto">
     <table class="min-w-full border border-gray-200 rounded-lg overflow-hidden">
-      <thead class="bg-[#f1f2f4]">
+      <thead class="bg-[#f1f2f4]"> 
         <tr>
           <th class="px-4 py-3 text-left text-xs font-semibold text-[#6a7581] uppercase tracking-wider">#</th>
           <th class="px-4 py-3 text-left text-xs font-semibold text-[#6a7581] uppercase tracking-wider">Termo</th>
@@ -15,25 +35,27 @@
       <tbody class="divide-y divide-gray-100">
         {% for termo in glossario %}
         <tr class="hover:bg-blue-50 transition-colors">
+          <!--  Adiciona um índice do termo na tabela, começando do 1 -->
           <td class="px-4 py-3 text-sm text-gray-700">{{ loop.index }}</td>
+          <!-- Adiciona o primeiro elemento do glossário (termo) na página -->
           <td class="px-4 py-3 text-base font-medium text-[#3d98f4]">{{ termo[0] }}</td>
+          <!-- Adiciona o segundo elemento do glossário (definição) na página -->
           <td class="px-4 py-3 text-gray-700">{{ termo[1] }}</td>
+          <!-- Botão apagar com funcionalidade de formulário POST para /apagar-termo (app.py) -->
           <td class="px-4 py-3 text-center">
-            <button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-md bg-red-100 text-red-600 text-xs font-semibold hover:bg-red-200 transition-colors cursor-pointer">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-              Apagar
-            </button>
+            <!-- Formulário POST para apagar um termo específico a partir do botão 'Apagar' dele -->
+            <form method="POST" action="/apagar-termo" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja apagar o termo &quot;{{ termo[0] }}&quot;?');">
+              <input type="hidden" name="termo" value="{{ termo[0] }}">
+              <button type="submit" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-md bg-[#191013] text-[#F4F4F2] text-xs font-semibold hover:bg-red-500 transition-colors cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                Apagar
+              </button>
+            </form>
           </td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
-  </div>
-  <div class="flex justify-end mt-8">
-    <a href="/novo-termo" class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-[#3d98f4] text-white font-semibold text-sm shadow hover:bg-[#2176c7] transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
-      Novo termo
-    </a>
   </div>
 </div>
 {% endblock %}
