@@ -36,7 +36,7 @@
         {% for termo in glossario %}
         <!-- Linhas com cores alternadas para melhor visualização -->
         <tr class="hover:bg-blue-50 transition-colors {% if loop.index0 % 2 == 0 %}bg-white{% else %}bg-gray-100{% endif %}">
-          <!--  Adiciona um índice do termo na tabela, começando do 1 -->
+          <!-- Índice do termo na tabela, começando do 1 -->
           <td class="px-4 py-3 text-sm text-gray-700">{{ loop.index }}</td>
           <!-- Adiciona o primeiro elemento do glossário (termo) na página -->
           <td class="px-4 py-3 text-base font-medium text-[#3d98f4]">{{ termo[0] }}</td>
