@@ -3,6 +3,7 @@ from flask import Flask, render_template, url_for, request, redirect, jsonify, f
 import google.generativeai as genai
 import os
 from dotenv import load_dotenv
+import markdown
 
 load_dotenv()
 
@@ -113,6 +114,7 @@ def conteudoPython():
 
 # Configuração do Google Generative AI
 api_key = os.environ.get('GOOGLE_GENAI_API_KEY')
+
 if api_key:
     genai.configure(api_key=api_key)
 else:
@@ -123,6 +125,7 @@ def chatbot_page():
     resposta = None
     if request.method == 'POST':
         pergunta = request.form.get('pergunta')
+
         if pergunta:
             try:
                 model = genai.GenerativeModel('gemini-2.0-flash')
@@ -132,6 +135,9 @@ def chatbot_page():
                 import traceback
                 print('ERRO GEMINI:', traceback.format_exc())
                 resposta = f"Erro ao consultar Gemini: {str(e)}\n{traceback.format_exc()}"
+
+            resposta = markdown.markdown(resposta)
+
     return render_template('chatbot.html', resposta=resposta)
 
 
